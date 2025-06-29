@@ -10,7 +10,7 @@ export default function App() {
     if (!ticker) return;
     const apiUrl = import.meta.env.VITE_API_URL || "http://localhost:8000";
     try {
-      const res = await axios.post(`${apiUrl}/analyze`, {
+      const res = await axios.post(`${apiUrl}/api/analyze`, {
         tickers: [ticker]
       });
       setResults(prev => [...prev, ...res.data.results]);
